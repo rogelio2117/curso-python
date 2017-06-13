@@ -17,5 +17,4 @@ print (dato, "contiene", contador, "palabras.")
 
 print ("capitalizacion:", texto.upper())
 print ("la longitud de la cadena:", len(dato))
-replace(o, 0)
-print ("intercambio de la letra o por 0: ", dato.replace())
+print (texto.replace('o', '0'), ' Reemplazamos la letra o por 0.')
