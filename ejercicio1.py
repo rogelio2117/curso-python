@@ -12,9 +12,9 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 
 	informacion = {
-	'Nombre': args.Nombre,
-	'Edad': args.Edad,
-	'Clase':args.Clase
+	    'Nombre': args.Nombre,
+	    'Edad': args.Edad,
+	    'Clase': args.Clase
 	}
-	for llave,valor in informacion.iteritems():
-		print llave,valor
+	for llave, valor in informacion.iteritems():
+		print llave, valor
