@@ -1,0 +1,9 @@
+el estudiante Pedro de 18 de edad, es de la ciudad de Somoto y cursa 2 en la universidad 
+el estudiante Oscar de 16 de edad, es de la ciudad de Managua y cursa 3 en la universidad 
+el estudiante Alicia de 19 de edad, es de la ciudad de Managua y cursa 1 en la universidad 
+el estudiante Pedro de 16 de edad, es de la ciudad de Masaya y cursa 2 en la universidad 
+el estudiante Ana de 20 de edad, es de la ciudad de Chinandega y cursa 2 en la universidad 
+el estudiante Oscar de 17 de edad, es de la ciudad de Somoto y cursa 2 en la universidad 
+el estudiante Ernesto de 17 de edad, es de la ciudad de Chinandega y cursa 3 en la universidad 
+el estudiante Pablo de 19 de edad, es de la ciudad de Somoto y cursa 3 en la universidad 
+el estudiante Luis de 19 de edad, es de la ciudad de Masaya y cursa 3 en la universidad 
