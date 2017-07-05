@@ -3,10 +3,14 @@
     <head>
         <title>Lista no ordenada</title>
     </head>
-    <h1>Universidad de Managua</h1>
+    <h1>{{encabezado}}</h1>
+    {% for d in docs %}
+        <div>{{d.nombre}}</div>
+    {% endfor %}
+
 	<li>el mas alto nivel</li>
     <body>
-    <p>cosas q me gustan hacer</p>
+    <p> esto esta definido en base.html</p>
     <ul>
                 <li>pasear</li>
                 <li>comer</li>

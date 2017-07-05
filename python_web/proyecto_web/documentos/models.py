@@ -9,5 +9,5 @@ class Documentos(models.Model):
 	nombre = models.CharField(max_length=100, null = True, blank = True)
 	fecha = models.DateTimeField(null = True, blank = True)
 	def __unicode__(self):
-		return 'Documentos - {0}'.format(self.id)
+		return 'Documentos - {0}'.format(self.nombre)
 		
