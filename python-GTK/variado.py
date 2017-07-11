@@ -1,50 +1,47 @@
 import gi
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
+class Mi_Ventana(Gtk.Window):
+	def __init__(self, *args, **kwargs):
+		
+		super(Mi_Ventana, self).__init__(*args, **kwargs)
+		self.set_size_request(500, 300)
+		self.connect('delete-event', Gtk.main_quit)
 
-class MiVentana(Gtk.Window):
-    def __init__(self, *args, **kwargs):
+		self.agregar_boton()
+		self.agregar_texto()
+		self.agregar_label()
+		self.agregar_salir()
+		self.contenedor()
 
-        super(MiVentana, self).__init__(*args, **kwargs)
-        self.set_default_size(500, 300)
-        self.connect('delete-event', Gtk.main_quit)
+	def Imprimir(self, btn):
+		impreso = self.texto.get_text()
+		self.label_1.set_text(impreso)
 
-        self.agregar_contenedor()
-        self.agregar_texto()
-        self.agregar_boton(
-        	)
-        self.agregar_label()
-        self.contenedor
+	def agregar_boton(self):	
+		self.btn_1 = Gtk.Button('insertar')
+		self.btn_1.connect('clicked', self.Imprimir)
 
+	def agregar_texto(self):	
+		self.texto = Gtk.Entry()
 
-    def agregar_contenedor(self):
-        self.contenedor = Gtk.Grid()
-        self.contenedor.set_column_homogeneous(True)
-        self.add(self.contenedor)
+	def agregar_label(self):	
+		self.label_1 = Gtk.Label('Mostrar el texto')
 
+	def agregar_salir(self):	
+		self.btnexit = Gtk.Button('salir')
+		self.btnexit.connect('clicked', Gtk.main_quit)
 
-    def agregar_texto(self):
-        self.entrada =  Gtk.Entry()
-        self.contenedor.attach(self.entrada, 0, 0, 3, 1)
-    
+	def contenedor(self):	
+		self.box = Gtk.VBox()
+		self.box.pack_start(self.texto, True, False, 0)
+		self.box.pack_start(self.btn_1, True, False, 0)
+		self.box.pack_start(self.label_1, True, False, 0)
+		self.box.pack_start(self.btnexit, True, False, 0)
+		self.add(self.box)
 
-    def agregar_boton(self):
-    	self.button = Gtk.Button('Ingresar')
-    	self.contenedor.attach(self.button, 1,1,1,1)
-
-    def agregar_label(self):
-    	self.label = Gtk.Label('Texto Ingresado')
-    	self.contenedor.attach(self.label, 0,0,3,1)
-
-
-if __name__ == '__main__':
-
-
-
-	ventana = MiVentana()
+if __name__ == '__main__':			
+	ventana = Mi_Ventana()
 	ventana.show_all()
-
-	Gtk.main()
-
+Gtk.main()
