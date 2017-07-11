@@ -74,4 +74,5 @@ class Miventana(Gtk.Window):
 		usando Cellrenderer widgets como elementos hijos
 		args: (titulo, cellrenderer, posiscion en el modelo de la informacion a mostrar)
 		3.3 agregar cada TreeViewcolum al treeview widget
+		https://github.com/of-curso-python/curso-python
 		"""
