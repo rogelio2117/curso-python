@@ -58,7 +58,7 @@ class Miventana(Gtk.Window):
 		)
 
 		monto = Gtk.CellRendererText()
-		columna_monto = Gtk.TreeViewColumn('Monto', monto, text=1)
+		columna_monto = Gtk.TreeViewColumn('Monto', monto, text=0)
 
 		self.lista_activos.append_column(columna_descripcion)
 		self.lista_activos.append_column(columna_monto)
