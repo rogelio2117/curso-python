@@ -7,7 +7,7 @@ class Miventana(Gtk.Window):
 	def __init__(self, *args, **kwargs):
 		
 		super(Miventana, self).__init__(*args, **kwargs)
-		self.set_default_size(500, 300)
+		self.set_size_request(500, 300)
 		self.connect('delete-event', Gtk.main_quit)
 
 		self.agregar_contenedor()
@@ -33,35 +33,46 @@ class Miventana(Gtk.Window):
 			1,
 			1
 		)
-		
+		self.boton.connect('clicked', self.agregar_fila)
 
 	def agregar_lista(self):
 		
-		self.modelo =Gtk.ListStore(str, float)
+		self.modelo = Gtk.ListStore(str, float)
 		self.modelo.append(['valor1', 1.5])
 
 		self.lista_activos = Gtk.TreeView(self.modelo)
 
-		descripcion =Gtk.CellRendererText()
-		columna_descripcion = Gtk.TreeViewColum('Descripcion',descripcion, text=0)
+		descripcion = Gtk.CellRendererText()
+		columna_descripcion = Gtk.TreeViewColumn(
+			'Descripcion',
+			descripcion, 
+			text=0
+		)
 
 		monto = Gtk.CellRendererText()
-		columna_monto =Gtk.TreeViewColum('Monto', monto, text=1)
+		columna_monto = Gtk.TreeViewColumn('Monto', monto, text=1)
 
 		self.lista_activos.append_column(columna_descripcion)
 		self.lista_activos.append_column(columna_monto)
 
 		self.contenedor.attach_next_to(
+			self.lista_activos,
 			self.boton,
-			self.entrada,
 			Gtk.PositionType.BOTTOM,
 			1,
 			1
 		)
 
-	if __name__ == '__main__':
-		ventana = Miventana()
-		ventana.show_all()
+		self.modelo.append(['valor1', 1.5])
+
+	def agregar_fila(self, btn):
+		texo=self.entrada.get_text()
+		self.modelo.append([texto, 1.5])
+
+if __name__ == '__main__':
+	ventana = Miventana()
+	ventana.show_all()
+	Gtk.main()
 """crea un treeView
 		1 crear el model de datos Gtk.ListStore(type, type,..., type)
 		2crear el widget que contiene o muestra los datos de modelo 
