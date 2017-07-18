@@ -2,11 +2,11 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class MiVentanita(Gtk.Window):
+class MiVentanita(Gtk.ApplicationWindow):
 	def __init__(self, *args, **kwargs):
 		super(MiVentanita, self).__init__(*args, **kwargs)
 		self.set_default_size(500, 300)
-		self.connect('delete-event', Gtk.main_quit)
+		#self.connect('delete-event', Gtk.main_quit)
 		self.add_contenedor()
 		self.add_entradaActivo()
 		self.add_entradaPasivo()
@@ -105,4 +105,4 @@ class MiVentanita(Gtk.Window):
 if __name__ == '__main__':		
 	ventana = MiVentanita()
 	ventana.show_all()
-Gtk.main()
+	Gtk.main()
